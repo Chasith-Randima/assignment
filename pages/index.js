@@ -1,9 +1,9 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
+import Head from "next/head";
+import Image from "next/image";
+import { Inter } from "next/font/google";
+import styles from "@/styles/Home.module.css";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
@@ -14,110 +14,159 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>pages/index.js</code>
-          </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{' '}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
+      <main className="bg-blue-800">
+        {/* Nav bar */}
+
+        <nav className="grid grid-cols-12 ">
+          <div className="col-span-2 grid justify-center">Logo</div>
+          <div className="col-span-10 grid justify-center">
+            <div class="hidden md:flex space-x-1 items-center">
+              <a
+                class="py-4 px-2 text-green-500 border-green-500 border-b-4 font-semibold"
+                href="#"
+              >
+                about
+              </a>
+              <a
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
+                href="#"
+              >
+                awards
+              </a>
+              <a
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
+                href="#"
+              >
+                products
+              </a>
+              <a
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
+                href="#"
+              >
+                news
+              </a>
+              <a
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
+                href="#"
+              >
+                contacts
+              </a>
+              <a
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
+                href="#"
+              >
+                gallery
+              </a>
+              <a
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
+                href="#"
+              >
+                login
+              </a>
+              <a
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
+                href="#"
+              >
+                register
+              </a>
+            </div>
           </div>
-        </div>
+        </nav>
+        {/* Nav bar */}
 
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-          <div className={styles.thirteen}>
-            <Image
-              src="/thirteen.svg"
-              alt="13"
-              width={40}
-              height={31}
-              priority
-            />
+        {/* Hero Section */}
+
+        <section className="grid grid-cols-2 gap-3 mx-10 my-4">
+          <div className="">
+            <h2 className="my-4 font-bold text-2xl text-center">
+              This is the heading
+            </h2>
+            <div className="mx-10">
+              <p>
+                The quick brown fox jump over the lazy doggies head. The quick
+                brown fox jump over the lazy doggies head. The quick brown fox
+                jump over the lazy doggies head. The quick brown fox jump over
+                the lazy doggies head.
+              </p>
+            </div>
           </div>
-        </div>
+          <div>image section</div>
+        </section>
+        {/* Hero Section */}
 
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
+        {/* What we Do */}
 
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
+        <section className="pd-5 grid grid-cols-5 mx-10 my-10">
+          <div className="col-span-2">
+            <h2 className="text-center font-extrabold text-2xl">What we do</h2>
+            <div>
+              <p>
+                The quick brown fox jump over the lazy doggies head. The quick
+                brown fox jump over the lazy doggies head. The quick brown fox
+                jump over the lazy doggies head. The quick brown fox jump over
+                the lazy doggies head. The quick brown fox jump over the lazy
+                doggies head. The quick brown fox jump over the lazy doggies
+                head.
+              </p>
+            </div>
+          </div>
+          <div className="col-span-3">image</div>
+        </section>
+        {/* What we Do */}
 
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
+        {/* Main Card */}
+        <section className="mx-10 my-5">
+          <div className="grid grid-cols-5">
+            <div className="col-span-3">Image</div>
+            <div className="col-span-2">
+              <h2>Award ceremony</h2>
+              <div>
+                <p>
+                  the quick brown fox jump over the lazy doggies head. the quick
+                  brown fox jump over the lazy doggies head. the quick brown fox
+                  jump over the lazy doggies head. the quick brown fox jump over
+                  the lazy doggies head. the quick brown fox jump over the lazy
+                  doggies head.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="grid grid-cols-5">
+            <div className="col-span-2">
+              <h2>Entreprenuer Registration</h2>
+              <div>
+                the quick brown fox jump over the lazy doggeies head. the quick
+                brown fox jump over the lazy doggeies head. the quick brown fox
+                jump over the lazy doggeies head. the quick brown fox jump over
+                the lazy doggeies head. the quick brown fox jump over the lazy
+                doggeies head.
+              </div>
+            </div>
+            <div className="col-span-3">image</div>
+          </div>
+          <div className="grid grid-cols-5">
+            <div className="col-span-3">Image</div>
+            <div className="col-span-2">
+              <h2>Award ceremony</h2>
+              <div>
+                <p>
+                  the quick brown fox jump over the lazy doggies head. the quick
+                  brown fox jump over the lazy doggies head. the quick brown fox
+                  jump over the lazy doggies head. the quick brown fox jump over
+                  the lazy doggies head. the quick brown fox jump over the lazy
+                  doggies head.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* Main Card */}
 
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
-        </div>
+        {/* Related Articles */}
+
+        
+        {/* Related Articles */}
       </main>
     </>
-  )
+  );
 }
