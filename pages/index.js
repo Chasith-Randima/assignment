@@ -14,60 +14,60 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="bg-blue-800">
+      <main className="bg-blue-900">
         {/* Nav bar */}
 
-        <nav className="grid grid-cols-12 ">
+        <nav className="grid grid-cols-12 pt-10">
           <div className="col-span-2 grid justify-center">Logo</div>
           <div className="col-span-10 grid justify-center">
-            <div class="hidden md:flex space-x-1 items-center">
+            <div class="flex justify-between space-x-1 items-center">
               <a
-                class="py-4 px-2 text-green-500 border-green-500 border-b-4 font-semibold"
+                class="py-4 px-2 text-gray-300 text-xl capitalize font-bold"
                 href="#"
               >
-                about
+                ABOUT
               </a>
               <a
-                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
+                class="py-4 px-2 text-gray-300 text-xl capitalize font-bold"
                 href="#"
               >
-                awards
+                ABOUT
               </a>
               <a
-                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
+                class="py-4 px-2 text-gray-300 text-xl capitalize font-bold"
                 href="#"
               >
-                products
+                ABOUT
               </a>
               <a
-                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
+                class="py-4 px-2 text-gray-300 text-xl capitalize font-bold"
                 href="#"
               >
-                news
+                ABOUT
               </a>
               <a
-                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
+                class="py-4 px-2 text-gray-300 text-xl capitalize font-bold"
                 href="#"
               >
-                contacts
+                ABOUT
               </a>
               <a
-                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
+                class="py-4 px-2 text-gray-300 text-xl capitalize font-bold"
                 href="#"
               >
-                gallery
+                ABOUT
               </a>
               <a
-                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
+                class=" text-gray-300 text-xl capitalize font-bold px-4 py-1 bg-blue-300 rounded-full"
                 href="#"
               >
-                login
+                LOGIN
               </a>
               <a
-                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
+                class=" text-gray-300 text-xl capitalize font-bold px-4 py-1 bg-blue-300 rounded-full"
                 href="#"
               >
-                register
+                REGISTER
               </a>
             </div>
           </div>
@@ -76,31 +76,38 @@ export default function Home() {
 
         {/* Hero Section */}
 
-        <section className="grid grid-cols-2 gap-3 mx-10 my-4">
+        <section className="grid grid-cols-2 gap-3 mx-20 my-4 mt-10 ">
           <div className="">
-            <h2 className="my-4 font-bold text-2xl text-center">
+            <h2 className="my-4 font-bold text-3xl text-center capitalize text-gray-500">
               This is the heading
             </h2>
             <div className="mx-10">
-              <p>
+              <p className="text-gray-400 text-xl">
                 The quick brown fox jump over the lazy doggies head. The quick
                 brown fox jump over the lazy doggies head. The quick brown fox
                 jump over the lazy doggies head. The quick brown fox jump over
-                the lazy doggies head.
+                the lazy doggies head. The quick brown fox jump over the lazy
+                doggies head. The quick brown fox jump over the lazy doggies
+                head. The quick brown fox jump over the lazy doggies head. The
+                quick brown fox jump over the lazy doggies head.
               </p>
             </div>
           </div>
-          <div>image section</div>
+          <div>
+            <img src="./images/hero_image.jpg" className="rounded-xl" />
+          </div>
         </section>
         {/* Hero Section */}
 
         {/* What we Do */}
 
-        <section className="pd-5 grid grid-cols-5 mx-10 my-10">
-          <div className="col-span-2">
-            <h2 className="text-center font-extrabold text-2xl">What we do</h2>
+        <section className="pd-10 grid grid-cols-5 mx-10 mt-10  shadow-2xl rounded-2xl border-b-8 border-b-blue-200 bg-blue-600">
+          <div className="col-span-2 p-10">
+            <h2 className="text-center font-extrabold text-4xl text-white">
+              What we do
+            </h2>
             <div>
-              <p>
+              <p className="text-gray-400 text-xl">
                 The quick brown fox jump over the lazy doggies head. The quick
                 brown fox jump over the lazy doggies head. The quick brown fox
                 jump over the lazy doggies head. The quick brown fox jump over
@@ -110,18 +117,31 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="col-span-3">image</div>
+          <div className="col-span-3 h-96 p-10">
+            <img
+              src="./images/hr_people.jpg"
+              className=" w-full h-full mx-auto rounded-xl"
+            />
+          </div>
         </section>
         {/* What we Do */}
 
         {/* Main Card */}
         <section className="mx-10 my-5">
-          <div className="grid grid-cols-5">
-            <div className="col-span-3">Image</div>
-            <div className="col-span-2">
-              <h2>Award ceremony</h2>
+          <div className="grid grid-cols-6  p-10">
+            <div className="col-span-3 h-96 mr-5">
+              {/* <div className="col-span-3 h-2/3 p-10"> */}
+              <img
+                src="./images/hr_people.jpg"
+                className=" w-full h-full mx-auto rounded-xl"
+              />
+            </div>
+            <div className="col-span-3 mx-10">
+              <h2 className="font-bold text-4xl my-10 text-white capitalize">
+                Award ceremony
+              </h2>
               <div>
-                <p>
+                <p className="font-semibold text-2xl text-gray-400">
                   the quick brown fox jump over the lazy doggies head. the quick
                   brown fox jump over the lazy doggies head. the quick brown fox
                   jump over the lazy doggies head. the quick brown fox jump over
@@ -131,25 +151,43 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-5">
-            <div className="col-span-2">
-              <h2>Entreprenuer Registration</h2>
+          <div className="grid grid-cols-6  p-10">
+            <div className="col-span-3 mx-10">
+              <h2 className="font-bold text-4xl my-10 text-white capitalize">
+                Entreprenuer Registration
+              </h2>
               <div>
-                the quick brown fox jump over the lazy doggeies head. the quick
-                brown fox jump over the lazy doggeies head. the quick brown fox
-                jump over the lazy doggeies head. the quick brown fox jump over
-                the lazy doggeies head. the quick brown fox jump over the lazy
-                doggeies head.
+                <p className="font-semibold text-2xl text-gray-400">
+                  the quick brown fox jump over the lazy doggeies head. the
+                  quick brown fox jump over the lazy doggeies head. the quick
+                  brown fox jump over the lazy doggeies head. the quick brown
+                  fox jump over the lazy doggeies head. the quick brown fox jump
+                  over the lazy doggeies head.
+                </p>
               </div>
             </div>
-            <div className="col-span-3">image</div>
+            <div className="col-span-3 h-96 mr-5">
+              {/* <div className="col-span-3 h-2/3 p-10"> */}
+              <img
+                src="./images/hr_people.jpg"
+                className=" w-full h-full mx-auto rounded-xl"
+              />
+            </div>
           </div>
-          <div className="grid grid-cols-5">
-            <div className="col-span-3">Image</div>
-            <div className="col-span-2">
-              <h2>Award ceremony</h2>
+          <div className="grid grid-cols-6">
+            <div className="col-span-3 h-96 mr-5">
+              {/* <div className="col-span-3 h-2/3 p-10"> */}
+              <img
+                src="./images/hr_people.jpg"
+                className=" w-full h-full mx-auto rounded-xl"
+              />
+            </div>
+            <div className="col-span-3 mx-10">
+              <h2 className="font-bold text-4xl my-10 text-white capitalize">
+                Award ceremony
+              </h2>
               <div>
-                <p>
+                <p className="font-semibold text-2xl text-gray-400">
                   the quick brown fox jump over the lazy doggies head. the quick
                   brown fox jump over the lazy doggies head. the quick brown fox
                   jump over the lazy doggies head. the quick brown fox jump over
@@ -163,9 +201,183 @@ export default function Home() {
         {/* Main Card */}
 
         {/* Related Articles */}
+        <section>
+          <h2 className="text-center font-bold text-4xl text-white">
+            Related Articles{" "}
+          </h2>
+          <div className="mt-10">
+            <div className="grid grid-cols-2 mx-16 my-10">
+              <p className="text-2xl text-gray-400 text-center my-auto">
+                The quick brown fox jump over the lazy doggies head.
+              </p>
+              <div className="rounded-2xl bg-blue-400 flex justify-center text-center py-8">
+                <h2 className="my-auto font-semibold text-2xl text-white">
+                  News And Publications
+                </h2>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 mx-16 my-10">
+              <p className="text-2xl text-gray-400 text-center my-auto">
+                The quick brown fox jump over the lazy doggies head.
+              </p>
+              <div className="rounded-2xl bg-blue-400 flex justify-center text-center py-8">
+                <h2 className="my-auto font-semibold text-2xl text-white">
+                  News And Publications
+                </h2>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 mx-16 my-10">
+              <p className="text-2xl text-gray-400 text-center my-auto">
+                The quick brown fox jump over the lazy doggies head.
+              </p>
+              <div className="rounded-2xl bg-blue-400 flex justify-center text-center py-8">
+                <h2 className="my-auto font-semibold text-2xl text-white">
+                  News And Publications
+                </h2>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 mx-16 my-10">
+              <p className="text-2xl text-gray-400 text-center my-auto">
+                The quick brown fox jump over the lazy doggies head.
+              </p>
+              <div className="rounded-2xl bg-blue-400 flex justify-center text-center py-8">
+                <h2 className="my-auto font-semibold text-2xl text-white">
+                  News And Publications
+                </h2>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 mx-16 my-10">
+              <p className="text-2xl text-gray-400 text-center my-auto">
+                The quick brown fox jump over the lazy doggies head.
+              </p>
+              <div className="rounded-2xl bg-blue-400 flex justify-center text-center py-8">
+                <h2 className="my-auto font-semibold text-2xl text-white">
+                  News And Publications
+                </h2>
+              </div>
+            </div>
+          </div>
+        </section>
 
-        
         {/* Related Articles */}
+
+        {/* Gallery */}
+        <section>
+          <h2 className="text-center font-bold text-4xl text-white my-10">
+            Gallery
+          </h2>
+          <div className="text-center px-20">
+            <p className="text-gray-400 text-2xl font-bold ">
+              the quick brown fox jump over the lazy doggies head.the quick
+              brown fox jump over the lazy doggies head. the quick brown fox
+              jump over the lazy doggie shead.
+            </p>
+          </div>
+          <div className="">
+            <div class="container mx-auto px-5 py-2 lg:px-32 lg:pt-24">
+              <div class="-m-1 flex flex-wrap md:-m-2">
+                <div class="flex w-1/2 flex-wrap">
+                  <div class="w-1/2 p-1 md:p-2">
+                    <img
+                      alt="gallery"
+                      class="block h-full w-full rounded-lg object-cover object-center"
+                      src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(70).webp"
+                    />
+                  </div>
+                  <div class="w-1/2 p-1 md:p-2">
+                    <img
+                      alt="gallery"
+                      class="block h-full w-full rounded-lg object-cover object-center"
+                      src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(72).webp"
+                    />
+                  </div>
+                  <div class="w-full p-1 md:p-2">
+                    <img
+                      alt="gallery"
+                      class="block h-full w-full rounded-lg object-cover object-center"
+                      src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
+                    />
+                  </div>
+                </div>
+                <div class="flex w-1/2 flex-wrap">
+                  <div class="w-full p-1 md:p-2">
+                    <img
+                      alt="gallery"
+                      class="block h-full w-full rounded-lg object-cover object-center"
+                      src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(74).webp"
+                    />
+                  </div>
+                  <div class="w-1/2 p-1 md:p-2">
+                    <img
+                      alt="gallery"
+                      class="block h-full w-full rounded-lg object-cover object-center"
+                      src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(75).webp"
+                    />
+                  </div>
+                  <div class="w-1/2 p-1 md:p-2">
+                    <img
+                      alt="gallery"
+                      class="block h-full w-full rounded-lg object-cover object-center"
+                      src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(77).webp"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* Gallery */}
+
+        {/* Contact Us */}
+
+        <section className="grid grid-cols-2 gap-6 mx-20">
+          <div>
+            <div className=" mx-16 my-10">
+              <div className="rounded-2xl bg-blue-400 flex justify-center text-center py-8 my-5">
+                <h2 className="my-auto font-semibold text-2xl text-white">
+                  <span>Icon</span> News And Publications
+                </h2>
+              </div>
+              <div className="rounded-2xl bg-blue-400 flex justify-center text-center py-8 my-5">
+                <h2 className="my-auto font-semibold text-2xl text-white">
+                  <span>Icon</span> News And Publications
+                </h2>
+              </div>
+              <div className="rounded-2xl bg-blue-400 flex justify-center text-center py-8 my-5">
+                <h2 className="my-auto font-semibold text-2xl text-white">
+                  <span>Icon</span> News And Publications
+                </h2>
+              </div>
+              <div className="rounded-2xl bg-blue-400 flex justify-center text-center py-8 my-5">
+                <h2 className="my-auto font-semibold text-2xl text-white">
+                  <span>Icon</span> News And Publications
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div>
+            <iframe
+              width="488"
+              height="472"
+              frameborder="0"
+              scrolling="no"
+              marginheight="0"
+              marginwidth="0"
+              id="gmap_canvas"
+              src="https://maps.google.com/maps?width=488&amp;height=472&amp;hl=en&amp;q=%20Colombo+(elzian%20agro)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+            ></iframe>
+            <a href="https://maps-generator.com/">Maps Generator</a>
+          </div>
+        </section>
+        {/* Contact Us */}
+
+        {/* Footer */}
+        <section className="grid grid-cols-3">
+          <div>first column</div>
+          <div>second column</div>
+          <div>icon column</div>
+        </section>
+        {/* Footer */}
       </main>
     </>
   );
