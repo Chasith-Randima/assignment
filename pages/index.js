@@ -2,6 +2,14 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,12 +22,14 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="bg-blue-900">
+      <main className="bg-[#010936]">
         {/* Nav bar */}
 
-        <nav className="grid grid-cols-12 pt-10">
-          <div className="col-span-2 grid justify-center">Logo</div>
-          <div className="col-span-10 grid justify-center">
+        <nav className="grid grid-cols-12 pt-5">
+          <div className="col-span-4 md:col-span-2 grid justify-center">
+            <img src="./images/logo.png" />
+          </div>
+          <div className="hidden  md:col-span-10 md:grid justify-center">
             <div class="flex justify-between space-x-1 items-center">
               <a
                 class="py-4 px-2 text-gray-300 text-xl capitalize font-bold"
@@ -31,7 +41,25 @@ export default function Home() {
                 class="py-4 px-2 text-gray-300 text-xl capitalize font-bold"
                 href="#"
               >
-                ABOUT
+                PRODUCTS
+              </a>
+              <a
+                class="py-4 px-2 text-gray-300 text-xl capitalize font-bold"
+                href="#"
+              >
+                NEWS
+              </a>
+              <a
+                class="py-4 px-2 text-gray-300 text-xl capitalize font-bold"
+                href="#"
+              >
+                CONTACTS
+              </a>
+              <a
+                class="py-4 px-2 text-gray-300 text-xl capitalize font-bold"
+                href="#"
+              >
+                GALLERY
               </a>
               <a
                 class="py-4 px-2 text-gray-300 text-xl capitalize font-bold"
@@ -40,31 +68,13 @@ export default function Home() {
                 ABOUT
               </a>
               <a
-                class="py-4 px-2 text-gray-300 text-xl capitalize font-bold"
-                href="#"
-              >
-                ABOUT
-              </a>
-              <a
-                class="py-4 px-2 text-gray-300 text-xl capitalize font-bold"
-                href="#"
-              >
-                ABOUT
-              </a>
-              <a
-                class="py-4 px-2 text-gray-300 text-xl capitalize font-bold"
-                href="#"
-              >
-                ABOUT
-              </a>
-              <a
-                class=" text-gray-300 text-xl capitalize font-bold px-4 py-1 bg-blue-300 rounded-full"
+                class=" text-gray-300 text-xl capitalize font-bold px-4 py-1 bg-[#162d6c] rounded-full"
                 href="#"
               >
                 LOGIN
               </a>
               <a
-                class=" text-gray-300 text-xl capitalize font-bold px-4 py-1 bg-blue-300 rounded-full"
+                class=" text-gray-300 text-xl capitalize font-bold px-4 py-1 bg-[#162d6c] rounded-full"
                 href="#"
               >
                 REGISTER
@@ -76,8 +86,8 @@ export default function Home() {
 
         {/* Hero Section */}
 
-        <section className="grid grid-cols-2 gap-3 mx-20 my-4 mt-10 ">
-          <div className="">
+        <section className="grid md:grid-cols-2 gap-3 mx-5 md:mx-20 md:my-4 md:mt-10 ">
+          <div className="order-2 md:order-1">
             <h2 className="my-4 font-bold text-3xl text-center capitalize text-gray-500">
               This is the heading
             </h2>
@@ -93,16 +103,88 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div>
+          <div className="order-1 md:order-2">
             <img src="./images/hero_image.jpg" className="rounded-xl" />
           </div>
         </section>
         {/* Hero Section */}
 
+        {/* slider */}
+
+        <secion className="w-2/3 h-80 mx-32 p-32">
+          <Swiper
+            style={{
+              width: "80%",
+            }}
+            navigation={{
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            }}
+            spaceBetween={50}
+            slidesPerView={3}
+            modules={[Navigation]}
+            // navigation
+            pagination={{ clickable: true }}
+            scrollbar={{ draggable: true }}
+            onSlideChange={() => console.log("slide change")}
+            onSwiper={(swiper) => console.log(swiper)}
+          >
+            <SwiperSlide>
+              <div className="col-span-3 h-96 p-10">
+                <div className=" w-full h-full mx-auto rounded-xl">
+                  <i className="fas fa-home text-4xl text-white"></i>
+                </div>
+                <h2>Market Facilitations</h2>
+                {/* <img
+              src="./images/hr_people.jpg"
+              className=" w-full h-full mx-auto rounded-xl"
+            /> */}
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              {" "}
+              <div className="col-span-3 h-96 p-10">
+                <img
+                  src="./images/hr_people.jpg"
+                  className=" w-full h-full mx-auto rounded-xl"
+                />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              {" "}
+              <div className="col-span-3 h-96 p-10">
+                <img
+                  src="./images/hr_people.jpg"
+                  className=" w-full h-full mx-auto rounded-xl"
+                />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              {" "}
+              <div className="col-span-3 h-96 p-10">
+                <img
+                  src="./images/hr_people.jpg"
+                  className=" w-full h-full mx-auto rounded-xl"
+                />
+              </div>
+            </SwiperSlide>
+
+            <div className="swiper-button-prev text-xl">
+              {/* Tailwind CSS classes for the previous arrow */}
+              <i className="fas fa-chevron-left text-lg"></i>
+            </div>
+            <div className="swiper-button-next">
+              {/* Tailwind CSS classes for the next arrow */}
+              <i className="fas fa-chevron-right text-lg"></i>
+            </div>
+          </Swiper>
+        </secion>
+        {/* slider */}
+
         {/* What we Do */}
 
-        <section className="pd-10 grid grid-cols-5 mx-10 mt-10  shadow-2xl rounded-2xl border-b-8 border-b-blue-200 bg-blue-600">
-          <div className="col-span-2 p-10">
+        <section className="mx-5 md:pd-10 grid md:grid-cols-5 md:mx-10 md:mt-10  shadow-2xl rounded-2xl border-b-8 border-b-[#2945e4] bg-[#162d6c]">
+          <div className="md:col-span-2 p-3 md:p-10">
             <h2 className="text-center font-extrabold text-4xl text-white">
               What we do
             </h2>
@@ -117,7 +199,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="col-span-3 h-96 p-10">
+          <div className="md:col-span-3 h-96 p-3 md:p-10">
             <img
               src="./images/hr_people.jpg"
               className=" w-full h-full mx-auto rounded-xl"
@@ -127,17 +209,20 @@ export default function Home() {
         {/* What we Do */}
 
         {/* Main Card */}
-        <section className="mx-10 my-5">
-          <div className="grid grid-cols-6  p-10">
-            <div className="col-span-3 h-96 mr-5">
+        <section className="mx-5 md:mx-10 my-5">
+          <div className="grid md:grid-cols-6 p-3  md:p-10">
+            <h2 className="md:hidden font-bold text-4xl my-10 text-white capitalize">
+              Award ceremony
+            </h2>
+            <div className="md:col-span-3 h-96 mr-5">
               {/* <div className="col-span-3 h-2/3 p-10"> */}
               <img
                 src="./images/hr_people.jpg"
                 className=" w-full h-full mx-auto rounded-xl"
               />
             </div>
-            <div className="col-span-3 mx-10">
-              <h2 className="font-bold text-4xl my-10 text-white capitalize">
+            <div className="md:col-span-3 mx-10">
+              <h2 className="hidden md:block font-bold text-4xl my-10 text-white capitalize">
                 Award ceremony
               </h2>
               <div>
@@ -151,9 +236,12 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-6  p-10">
-            <div className="col-span-3 mx-10">
-              <h2 className="font-bold text-4xl my-10 text-white capitalize">
+          <div className="grid md:grid-cols-6 p-3  md:p-10">
+            <h2 className=" md:hidden col-span-full font-bold text-4xl my-10 text-white capitalize">
+              Entreprenuer Registration
+            </h2>
+            <div className=" order-2 md:order-1 col-span-3 mx-10">
+              <h2 className="hidden md:block font-bold text-4xl my-10 text-white capitalize">
                 Entreprenuer Registration
               </h2>
               <div>
@@ -166,7 +254,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="col-span-3 h-96 mr-5">
+            <div className="order-1 md:order-2 col-span-3 h-96 mr-5">
               {/* <div className="col-span-3 h-2/3 p-10"> */}
               <img
                 src="./images/hr_people.jpg"
@@ -174,8 +262,11 @@ export default function Home() {
               />
             </div>
           </div>
-          <div className="grid grid-cols-6">
-            <div className="col-span-3 h-96 mr-5">
+          <div className="grid md:grid-cols-6 p-3 md:p-10">
+            <h2 className=" md:hidden col-span-full font-bold text-4xl my-10 text-white capitalize">
+              Award ceremony
+            </h2>
+            <div className="col-span-3 h-96 md:mr-5">
               {/* <div className="col-span-3 h-2/3 p-10"> */}
               <img
                 src="./images/hr_people.jpg"
@@ -183,7 +274,7 @@ export default function Home() {
               />
             </div>
             <div className="col-span-3 mx-10">
-              <h2 className="font-bold text-4xl my-10 text-white capitalize">
+              <h2 className="hidden md:block font-bold text-4xl my-10 text-white capitalize">
                 Award ceremony
               </h2>
               <div>
@@ -206,51 +297,41 @@ export default function Home() {
             Related Articles{" "}
           </h2>
           <div className="mt-10">
-            <div className="grid grid-cols-2 mx-16 my-10">
+            <div className="grid grid-cols-2 mx-5 md:mx-16 my-10">
               <p className="text-2xl text-gray-400 text-center my-auto">
                 The quick brown fox jump over the lazy doggies head.
               </p>
-              <div className="rounded-2xl bg-blue-400 flex justify-center text-center py-8">
+              <div className="rounded-2xl bg-[#05146a] flex justify-center text-center py-8">
                 <h2 className="my-auto font-semibold text-2xl text-white">
                   News And Publications
                 </h2>
               </div>
             </div>
-            <div className="grid grid-cols-2 mx-16 my-10">
+            <div className="grid grid-cols-2 mx-5 md:mx-16 my-10">
               <p className="text-2xl text-gray-400 text-center my-auto">
                 The quick brown fox jump over the lazy doggies head.
               </p>
-              <div className="rounded-2xl bg-blue-400 flex justify-center text-center py-8">
+              <div className="rounded-2xl bg-[#05146a] flex justify-center text-center py-8">
                 <h2 className="my-auto font-semibold text-2xl text-white">
                   News And Publications
                 </h2>
               </div>
             </div>
-            <div className="grid grid-cols-2 mx-16 my-10">
+            <div className="grid grid-cols-2 mx-5 md:mx-16 my-10">
               <p className="text-2xl text-gray-400 text-center my-auto">
                 The quick brown fox jump over the lazy doggies head.
               </p>
-              <div className="rounded-2xl bg-blue-400 flex justify-center text-center py-8">
+              <div className="rounded-2xl bg-[#05146a] flex justify-center text-center py-8">
                 <h2 className="my-auto font-semibold text-2xl text-white">
                   News And Publications
                 </h2>
               </div>
             </div>
-            <div className="grid grid-cols-2 mx-16 my-10">
+            <div className="grid grid-cols-2 mx-5 md:mx-16 my-10">
               <p className="text-2xl text-gray-400 text-center my-auto">
                 The quick brown fox jump over the lazy doggies head.
               </p>
-              <div className="rounded-2xl bg-blue-400 flex justify-center text-center py-8">
-                <h2 className="my-auto font-semibold text-2xl text-white">
-                  News And Publications
-                </h2>
-              </div>
-            </div>
-            <div className="grid grid-cols-2 mx-16 my-10">
-              <p className="text-2xl text-gray-400 text-center my-auto">
-                The quick brown fox jump over the lazy doggies head.
-              </p>
-              <div className="rounded-2xl bg-blue-400 flex justify-center text-center py-8">
+              <div className="rounded-2xl bg-[#05146a] flex justify-center text-center py-8">
                 <h2 className="my-auto font-semibold text-2xl text-white">
                   News And Publications
                 </h2>
@@ -263,10 +344,10 @@ export default function Home() {
 
         {/* Gallery */}
         <section>
-          <h2 className="text-center font-bold text-4xl text-white my-10">
+          <h2 className="text-center font-bold text-4xl text-white my-5 md:my-10">
             Gallery
           </h2>
-          <div className="text-center px-20">
+          <div className="text-center p-5 md:px-20">
             <p className="text-gray-400 text-2xl font-bold ">
               the quick brown fox jump over the lazy doggies head.the quick
               brown fox jump over the lazy doggies head. the quick brown fox
@@ -276,7 +357,7 @@ export default function Home() {
           <div className="">
             <div class="container mx-auto px-5 py-2 lg:px-32 lg:pt-24">
               <div class="-m-1 flex flex-wrap md:-m-2">
-                <div class="flex w-1/2 flex-wrap">
+                <div class="flex  md:w-1/2 flex-wrap">
                   <div class="w-1/2 p-1 md:p-2">
                     <img
                       alt="gallery"
@@ -299,7 +380,7 @@ export default function Home() {
                     />
                   </div>
                 </div>
-                <div class="flex w-1/2 flex-wrap">
+                <div class="flex  md:w-1/2 flex-wrap">
                   <div class="w-full p-1 md:p-2">
                     <img
                       alt="gallery"
@@ -330,34 +411,34 @@ export default function Home() {
 
         {/* Contact Us */}
 
-        <section className="grid grid-cols-2 gap-6 mx-20">
-          <div>
-            <div className=" mx-16 my-10">
-              <div className="rounded-2xl bg-blue-400 flex justify-center text-center py-8 my-5">
-                <h2 className="my-auto font-semibold text-2xl text-white">
-                  <span>Icon</span> News And Publications
-                </h2>
-              </div>
-              <div className="rounded-2xl bg-blue-400 flex justify-center text-center py-8 my-5">
-                <h2 className="my-auto font-semibold text-2xl text-white">
-                  <span>Icon</span> News And Publications
-                </h2>
-              </div>
-              <div className="rounded-2xl bg-blue-400 flex justify-center text-center py-8 my-5">
-                <h2 className="my-auto font-semibold text-2xl text-white">
-                  <span>Icon</span> News And Publications
-                </h2>
-              </div>
-              <div className="rounded-2xl bg-blue-400 flex justify-center text-center py-8 my-5">
-                <h2 className="my-auto font-semibold text-2xl text-white">
-                  <span>Icon</span> News And Publications
-                </h2>
-              </div>
+        <section className="grid md:grid-cols-2 md:gap-6 mx-5 md:mx-20">
+          {/* <div > */}
+          <div className="mx-4 md:mx-16 my-5 md:my-10">
+            <div className="rounded-2xl bg-[#05146b] flex justify-center text-center py-8 my-5">
+              <h2 className="my-auto font-semibold text-2xl text-white">
+                <span>Icon</span> LOCATION
+              </h2>
+            </div>
+            <div className="rounded-2xl bg-[#05146b] flex justify-center text-center py-8 my-5">
+              <h2 className="my-auto font-semibold text-2xl text-white">
+                <span>Icon</span> EMAIL
+              </h2>
+            </div>
+            <div className="rounded-2xl bg-[#05146b] flex justify-center text-center py-8 my-5">
+              <h2 className="my-auto font-semibold text-2xl text-white">
+                <span>Icon</span> CALL
+              </h2>
+            </div>
+            <div className="rounded-2xl bg-[#05146b] flex justify-center text-center py-8 my-5">
+              <h2 className="my-auto font-semibold text-2xl text-white">
+                <span>Icon</span> OPEN HOURS
+              </h2>
             </div>
           </div>
-          <div>
+          {/* </div> */}
+          <div className="my-10 rounded-xl overflow-hidden">
             <iframe
-              width="488"
+              width="560"
               height="472"
               frameborder="0"
               scrolling="no"
@@ -366,16 +447,76 @@ export default function Home() {
               id="gmap_canvas"
               src="https://maps.google.com/maps?width=488&amp;height=472&amp;hl=en&amp;q=%20Colombo+(elzian%20agro)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
             ></iframe>
-            <a href="https://maps-generator.com/">Maps Generator</a>
+            {/* <a href="https://maps-generator.com/">Maps Generator</a> */}
           </div>
         </section>
         {/* Contact Us */}
 
         {/* Footer */}
-        <section className="grid grid-cols-3">
-          <div>first column</div>
-          <div>second column</div>
-          <div>icon column</div>
+        <section className="grid grid-cols-3  bg-[#010d50]">
+          <div className="mx-3 md:mx-10">
+            <div className="my-2">
+              <h3 className="font-semibold text-xl text-gray-400">About Us</h3>
+            </div>
+            <div className="my-2">
+              <h3 className="font-semibold text-xl text-gray-400">About Us</h3>
+            </div>
+            <div className="my-2">
+              <h3 className="font-semibold text-xl text-gray-400">About Us</h3>
+            </div>
+            <div className="my-2">
+              <h3 className="font-semibold text-xl text-gray-400">About Us</h3>
+            </div>
+            <div className="my-2">
+              <h3 className="font-semibold text-xl text-gray-400">About Us</h3>
+            </div>
+            <div className="my-2">
+              <h3 className="font-semibold text-xl text-gray-400">About Us</h3>
+            </div>
+            <div className="my-2">
+              <h3 className="font-semibold text-xl text-gray-400">About Us</h3>
+            </div>
+            <div className="my-2">
+              <h3 className="font-semibold text-xl text-gray-400">About Us</h3>
+            </div>
+            <div className="my-2">
+              <h3 className="font-semibold text-xl text-gray-400">About Us</h3>
+            </div>
+            <div className="my-2">
+              <h3 className="font-semibold text-xl text-gray-400">About Us</h3>
+            </div>
+          </div>
+          <div className="mx-3 md:mx-10">
+            <div className="my-2">
+              <h3 className="font-semibold text-xl text-gray-400">About Us</h3>
+            </div>
+            <div className="my-2">
+              <h3 className="font-semibold text-xl text-gray-400">About Us</h3>
+            </div>
+            <div className="my-2">
+              <h3 className="font-semibold text-xl text-gray-400">About Us</h3>
+            </div>
+            <div className="my-2">
+              <h3 className="font-semibold text-xl text-gray-400">About Us</h3>
+            </div>
+            <div className="my-2">
+              <h3 className="font-semibold text-xl text-gray-400">About Us</h3>
+            </div>
+            <div className="my-2">
+              <h3 className="font-semibold text-xl text-gray-400">About Us</h3>
+            </div>
+            <div className="my-2">
+              <h3 className="font-semibold text-xl text-gray-400">About Us</h3>
+            </div>
+          </div>
+
+          <div className="mx-3 md:mx-10 grid grid-rows-5 md:grid-cols-5">
+            <div>Facebook</div>
+            <div>Facebook</div>
+            <div>Facebook</div>
+            <div>Facebook</div>
+            <div>Facebook</div>
+          </div>
         </section>
         {/* Footer */}
       </main>
